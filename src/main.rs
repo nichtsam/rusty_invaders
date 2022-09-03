@@ -102,6 +102,12 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         // stabilize fps
         thread::sleep(Duration::from_millis(10));
+
+        if player.detect_collide(&mut invaders) {
+            audio.play("lose");
+            break 'game_loop;
+        }
+
         if invaders.is_all_killed() {
             audio.play("win");
             break 'game_loop;

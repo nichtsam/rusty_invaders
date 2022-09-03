@@ -63,6 +63,9 @@ impl Player {
         }
         has_hit_something
     }
+    pub fn detect_collide(&mut self, invaders: &mut Invaders) -> bool {
+        invaders.kill_invader_at(self.x, self.y)
+    }
 }
 
 impl Drawable for Player {
