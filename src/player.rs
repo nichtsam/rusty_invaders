@@ -26,6 +26,16 @@ impl Player {
             self.x += 1;
         }
     }
+    pub fn move_up(&mut self) {
+        if self.y > 0 {
+            self.y -= 1;
+        }
+    }
+    pub fn move_down(&mut self) {
+        if self.y < NUM_ROWS {
+            self.y += 1;
+        }
+    }
     pub fn shoot(&mut self) -> bool {
         if self.shots.len() < 2 {
             let shot = Shot::new(self.x, self.y - 1);

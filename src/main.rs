@@ -68,6 +68,12 @@ fn main() -> Result<(), Box<dyn Error>> {
                     KeyCode::Right => {
                         player.move_right();
                     }
+                    KeyCode::Up => {
+                        player.move_up();
+                    }
+                    KeyCode::Down => {
+                        player.move_down();
+                    }
                     KeyCode::Char(' ') => {
                         if player.shoot() {
                             audio.play("pew");
